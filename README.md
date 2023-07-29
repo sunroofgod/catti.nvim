@@ -1,0 +1,1 @@
+# catti.nvim
