@@ -1,0 +1,26 @@
+=================================================================================
+                                                                   *catti.nvim*
+
+This plugin that adds cats and joy (non-mutually exclusive) into your already
+wonderful neovim experience. 
+
+(There is currently only one main feature! Will be extending with more cat
+related features as I get more proficient with lua and neovim.)
+
+For details on the various features, see examples below.
+
+
+                                                     *catti.ToggleCattiMode()*
+ToggleCattiMode()
+    
+    Toggles CattiMode on and off. 
+
+    During CattiMode, you give some permissions to Catti. One thing Catti
+    dislikes is humans who uses the mouse whilst coding. Its nothing to do
+    with cats hating mice. Its just elitism. However, Catti is gracious. You
+    will be given three chances. Once you hit that number, Catti will run
+    |vim.api.nvim_command(":qa!")|. So becareful. 
+
+
+
+vim:tw=78:ts=8:ft=help:norl:
