@@ -1,8 +1,4 @@
-local M = {}
-
-local window = require("catti.window")
-
-local default_table = {
+local M = {
     {
         "Ah, indeed, what a peculiar sight it is to observe you, a human, employing such a",
         "rudimentary contraption as the mouse.",
@@ -25,18 +21,5 @@ local default_table = {
         "Toodles."
     }
 }
-
-function M.get_display_message()
-    local table = default_table
-    local catti_mode_buf_handle = vim.fn.bufnr("CattiMode")
-    local count = vim.api.nvim_buf_get_var(catti_mode_buf_handle, "count")
-    count = count + 1
-    if count == 3 then
-        vim.api.nvim_command(":w")
-        vim.api.nvim_command(":qa!")
-    end
-    vim.api.nvim_buf_set_var(catti_mode_buf_handle, "count", count)
-    window.display_window(table[count])
-end
 
 return M

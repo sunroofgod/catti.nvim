@@ -5,7 +5,7 @@ local catti_mode_buf
 local catti_mode_buf_handle
 
 local mouse = require("catti.mouse")
-local messages = require("catti.cm_messages")
+local display = require("catti.cm_display")
 
 local function create_catti_mode_buffer()
     catti_mode_buf = vim.api.nvim_create_buf(true, false)
@@ -30,14 +30,14 @@ function M.catti_mode_toggle()
         else
             vim.api.nvim_buf_set_var(catti_mode_buf_handle, "toggled", true)
             vim.api.nvim_buf_set_var(catti_mode_buf_handle, "count", 0)
-            mouse.start_mouse_tracker(messages.get_display_message)
+            mouse.start_mouse_tracker(display.get_display_message)
         end
     else
         create_catti_mode_buffer()
         catti_mode_buf_handle = vim.fn.bufnr("CattiMode")
         vim.api.nvim_buf_set_var(catti_mode_buf_handle, "toggled", true)
         vim.api.nvim_buf_set_var(catti_mode_buf_handle, "count", 0)
-        mouse.start_mouse_tracker(messages.get_display_message)
+        mouse.start_mouse_tracker(display.get_display_message)
     end
 end
 
